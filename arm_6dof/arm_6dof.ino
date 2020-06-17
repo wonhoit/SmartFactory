@@ -1,6 +1,6 @@
 #include <Servo.h>
 
-#define DEBUG_PRINT 0
+#define DEBUG_PRINT 1
 
 #define BASE 2
 #define SHOULDER 3
@@ -88,8 +88,14 @@ void loop() {
     for (int i = 0; i < SERVOS_CNT ; i++) { idle[i] = 0; }
     while( Serial.available()  > 0 ) { Serial.read(); } // 동작 중에 수신한 데이터 비우기
   }
-  
   detach_servo();
+//  set_arm_delay(INITANGLE, 5);
+//  delay(500);
+//  set_arm_inv(180, 0, 180, 98, 90, 5);
+//  delay(500);
+//  set_arm_inv(180, 0, -180, 98, 90, 5);
+//  delay(500);
+//  detach_servo();
 }
 
 void off_object_color(char objectColorIn) {
